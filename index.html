@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSHMR TOP 40 SONGS BY AS_Developer</title>
+</head>
+
+<body>
+  <style>
+    .previous_pause_next_button {
+      width: 10ch;
+      height: 10ch;
+    }
+
+    #music_player_s_header {
+      display: flex;
+    }
+
+
+    @media (max-width:768px) {
+      html {
+        font-size: 50%;
+      }
+
+      #header_with_buttons {
+        display: flex;
+        background-color: rgb(27, 15, 15);
+        margin: auto;
+        width: 100%;
+        position: top;
+        min-width: 100%;
+        max-width: fit-content;
+        width: 100%;
+
+      }
+
+    }
+
+    #header_with_buttons {
+      display: flex;
+      background-color: rgb(27, 15, 15);
+      margin: auto;
+      width: 100%;
+      position: top;
+      min-width: 100%;
+
+      width: 100%;
+    }
+
+    .red_color_size_auto {
+      color-adjust: red;
+    }
+
+    footer {
+      background-color: rgb(27, 15, 15);
+      color: white;
+      display: flex;
+      position: fixed, bottom;
+    }
+
+
+
+    .button_to_listen {
+      cursor: pointer;
+      background-color: khaki;
+      margin-right: 5ch;
+      motion: auto;
+    }
+
+    .text_to_konow_the_song_name {
+      position: middle;
+      font-family: 'Vollkorn', serif;
+
+    }
+
+    .table_item_margin_two {
+      margin: 5ch;
+      text-align: left;
+    }
+
+
+
+    .table_border_is_null {
+      border-style: hidden;
+      width: 100%;
+      height: auto;
+    }
+
+    .big_font {
+      font-size: 225%;
+      font-family: 'League Spartan', sans-serif;
+      color: black;
+    }
+
+    .align_them_all_corectly {
+      margin: auto;
+      text-align: center;
+      position: middle, center;
+
+    }
+
+    .auto_size_change {
+      font-size: 5ch;
+      margin-left: 50%;
+      text-align: right;
+      color: white;
+    }
+
+    .size_change {
+      position: center;
+
+    }
+
+    #image_50_100 {
+      width: 100px;
+      border-radius: 10ch;
+      height: 100px;
+    }
+
+    .color_changer_for_links {
+      color: white;
+      margin: auto;
+    }
+
+    body {
+      background-color: rgb(255, 179, 179);
+      font-size: auto;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', ' Roboto', ' Oxygen', Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: auto;
+
+    }
+
+    .algerian_font {
+      font-family: 'Syne Mono', monospace;
+      background-color: rgb(27, 15, 15);
+      color: white;
+      cursor: pointer;
+    }
+
+    ul {
+      margin: auto;
+      position: auto;
+    }
+
+    .big_size {
+      height: 50%;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      background-color: rgb(27, 15, 15);
+      border-style: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Syne Mono', monospace;
+    }
+
+    .flex_in_list {
+      display: flex;
+      position: middle;
+    }
+
+    .App {
+      font-family: 'Syne Mono', monospace;
+
+    }
+
+    .flex_display_in_li_s_div {
+      position: right;
+      text-align: right;
+
+    }
+
+    .font_align_to_right {
+      text-align: right;
+      font-family: 'Maven Pro', sans-serif;
+    }
+
+    .dotted_single {
+      border-style: dotted;
+      border-color: rgb(27, 15, 15);
+    }
+  </style>
+  <header class="App-header">
+    <div id="header_with_buttons">
+      <img
+        src="data:image/jpeg;base64,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"
+        alt="KSHMR" id="image_50_100" />
+      <center>
+        <b>
+          <h1 class="auto_size_change">
+            <nobr>
+              DJ KSHMR
+            </nobr>
+          </h1>
+        </b>
+      </center>
+    </div>
+  </header>
+
+
+  <a name="song_list_top_50 ">
+    <div class="header_song_list">
+      <center>
+        <h1 class="big_font">
+          <strong>
+            <b>
+              <u>
+                KSHMR TOP 40 SONGS LIST
+              </u>
+            </b>
+          </strong>
+        </h1>
+      </center>
+    </div>
+  </a>
+
+  <hr class='dotted_single' />
+
+  <div id="song_list">
+    <center>
+      <table class="table_border_is_null">
+        <tr>
+          <td class="table-item_margin_two"><b><strong><u>
+                  <h1>Play</h1>
+                </u></strong></b></td>
+          <td class="table-item_margin_two"><b><strong><u>
+                  <h1>Share</h1>
+                </u></strong></b></td>
+          <td class="table-item_margin_two"><b><strong><u>
+                  <h1>Name</h1>
+                </u></strong></b></td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two"> <a
+              href="https://open.spotify.com/embed/track/4CVOUJki8YUWol3jhLphgs?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a></td>
+          <td class="table_item_margin_two">
+
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4CVOUJki8YUWol3jhLphgs?si=51389053eb7444ef"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">Power</h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/1CjuV5ayEioZUc17iR9pGp?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/1CjuV5ayEioZUc17iR9pGp?si=b6363e48a801443e
+" data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Winner' Anthem
+
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/5t9YU2mww4eiFCeTBy3EFU?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/5t9YU2mww4eiFCeTBy3EFU?si=bb570be809fc489e
+    " data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              One More Round(Free Fire Booyah Day Theme Song)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="  https://open.spotify.com/embed/track/58hjBuGWj43LQ6WjN3ZQAK?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/58hjBuGWj43LQ6WjN3ZQAK?si=aad179e89dd648d8
+    " data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name"> No Regrets(feat.Krewella)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/6h7MPC2hBJHJQuobsRXqwF?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+
+          <td class="table_item_margin_two">
+
+            <a href="whatsapp://send?text= https://open.spotify.com/track/6h7MPC2hBJHJQuobsRXqwF?si=26e4f7fd563f43ba"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Devil Inside Me(feat.KARRA)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/5kldIyD365H9iq8Cz1Jb5F?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/5kldIyD365H9iq8Cz1Jb5F?si=3ac03433885d4734"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              My Best Life(feat.Mike Waters)
+
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/712Hktc9DnU5u9uOSn1q1Y?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=
+    https://open.spotify.com/track/712Hktc9DnU5u9uOSn1q1Y?si=173ca4bc94e74a1b" data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Bazaar- Official Sunburn Goa 2015 Anthem
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/4SlCYFaUQ8GRuwdpgniaGF?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4SlCYFaUQ8GRuwdpgniaGF?si=59abfff302754388
+    " data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Bombay Dreams(feat.Kavita Seth)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/7wxeGWvf8HNuUeK4k06mOr?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class='table_item_margin_two'>
+
+            <a href="whatsapp://send?text=https://open.spotify.com/track/7wxeGWvf8HNuUeK4k06mOr?si=b746c734fe52441f
+    " data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              OPA(feat.KSHMR,Dimitri Vegas ,Like Mike)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/3Sqk8YYMHkLdBiihWCQFYZ?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+
+            <a href="whatsapp://send?text=https://open.spotify.com/track/3Sqk8YYMHkLdBiihWCQFYZ?si=8a7ac1004cb242be"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Mandala(feat.Mitika)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/0cvMWzztDy1wNQkBqae8w4?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=
+    https://open.spotify.com/track/0cvMWzztDy1wNQkBqae8w4?si=da74eebbe7d747ca" data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Ready To Love
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/3h2aYVv7RHnOW0qGGYdYIT?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/3h2aYVv7RHnOW0qGGYdYIT?si=a1ff6a22e0d24efb"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Close Your Eyes
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/6JYbfA8kwEAQesToLmP34V?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+
+            <a href="whatsapp://send?text=https://open.spotify.com/track/6JYbfA8kwEAQesToLmP34V?si=0742cb72ba1e4138"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Close Your Eyes -VIP Mix
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/2M1mqcNUBIAfRoD2Puhejf?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/2M1mqcNUBIAfRoD2Puhejf?si=ded8a8fd5f8f4c2f"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Carry Me Home (feat.Jake Reese)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/4d3UnYs8dRDDd93MVaoj74?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4d3UnYs8dRDDd93MVaoj74?si=0dcb3f0233a745ad"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Wildcard(feat.Sidnie Tipton)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/5sbkFKdxVQ2FgEjKMvrHAL?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/5sbkFKdxVQ2FgEjKMvrHAL?si=a1e8c8e56429459e"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Echo(with KSHMR)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/6G7zxqKAXgLtjQS7FZeCxI?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/6G7zxqKAXgLtjQS7FZeCxI?si=19e3d5a3c3254880"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Neverland
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/4Ganul9T2XttkBRYZeZD8w?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4Ganul9T2XttkBRYZeZD8w?si=63aada889b0a4b6e"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Festival of Lights
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/4yCo1eRj9ZWKcAcXxxztGS?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4yCo1eRj9ZWKcAcXxxztGS?si=bbf44de78de24527"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              The Spook
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/3QkIM5vZGtd0VgK0eDfSmV?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/3QkIM5vZGtd0VgK0eDfSmV?si=5e99f142d0914430
+    " data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Kolkata
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/6wiQ1tAGxUsnbJXyjgXLel?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/6wiQ1tAGxUsnbJXyjgXLel?si=8f5f1c8fc40b46d9
+    " data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Dharma
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/4G5tyjccKnH2yGgh9TgPgy?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4G5tyjccKnH2yGgh9TgPgy?si=549a3b1720774ade"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Over And Out(feat.Charlott Boss)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/58DGBMcEov9iucIcLdC3Q6?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+
+            <a href="whatsapp://send?text=https://open.spotify.com/track/58DGBMcEov9iucIcLdC3Q6?si=5c008052ee7741c9"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Harmonica Andromeda
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/3iXPPCztCUia1E8LYL4DbZ?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/3iXPPCztCUia1E8LYL4DbZ?si=14d46e44aec145bc
+    " data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Midnight Lionwalk
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/4jM545c2DEKT78TYRSSzIr?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4jM545c2DEKT78TYRSSzIr?si=decbd5acda624152"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Blood in Water
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/2OmTzSUtti3Z1WjiiEnF26?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/2OmTzSUtti3Z1WjiiEnF26?si=a986a19091f544fe
+    " data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Shiva(Sunburn 2017 Anthem)(.feat.Marnik,The Golden Army)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/5xiAkbnx5yEIF3o2GG3ako?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/5xiAkbnx5yEIF3o2GG3ako?si=d181cfdd87c641f8 "
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Reunion(Free Fire 4th Aniversary Theme Song)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/6YLcnMrPDdNSgvkie3yZ2U?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/6YLcnMrPDdNSgvkie3yZ2U?si=e663ae7777944a4f"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Gypsy Waltz
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/3z6lijc3wD7SbsyZd5bc3u?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/3z6lijc3wD7SbsyZd5bc3u?si=59d7d739b0cd45fb"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Mystical Begning(feat.KARRA)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/5HAEB509xZqKZV5sPzurSr?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/5HAEB509xZqKZV5sPzurSr?si=72351585577e4824"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              The World we Left Behind(feat.KARRA)
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/3p60RAZ36L2nuov7CE5wgi?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/3p60RAZ36L2nuov7CE5wgi?si=0b64f839b4eb480b"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Paula
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/6qn0I7nwylvodRBKNMhq6W?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/6qn0I7nwylvodRBKNMhq6W?si=526d04a7bf2440c6"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              The Little Voice
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/4EZDJ5FMTj5pCJe2HBmd21?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4EZDJ5FMTj5pCJe2HBmd21?si=648955ea3d0947d0"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Lion Heart (feat. Jeremy Oceans, KARRA KSHMR, DIVINE & LIT killah )
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/6hKi0TR2wj6L9kyTLgfgFz?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/6hKi0TR2wj6L9kyTLgfgFz?si=fa3016bbde5a415c"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Scare Me (feat. KARRA) </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/0NIC4unbe5KZOp1d9T7OaF?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/0NIC4unbe5KZOp1d9T7OaF?si=cd00aa25b3c041d"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Secrets
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/3rgTS3933lMWoPiN6CW4qY?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/3rgTS3933lMWoPiN6CW4qY?si=e3583f9a4f6c4d6f"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Kids (feat.MKLA) </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/7m3Z9UZagE6SWM2z6RQiSt?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/7m3Z9UZagE6SWM2z6RQiSt?si=8d7d1464be214389"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Sleepwalk </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/1EqtfOWatsrp8nuj5FdfV6?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/1EqtfOWatsrp8nuj5FdfV6?si=496dcba8cf864ae5"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Dadima</h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/5cbOPrj8MIp7lPAALhdYlR?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/5cbOPrj8MIp7lPAALhdYlR?si=730272ca797e44e0"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Dhoom </h2>
+          </td>
+        </tr>
+        <tr>
+          <td class="table_item_margin_two">
+            <a href="https://open.spotify.com/embed/track/4MQPy613X9pvCAhdu7cFYc?utm_source=generator">
+              <button class="button_to_listen">
+                <img src="./play_a.svg" alt="play">
+              </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <a href="whatsapp://send?text=https://open.spotify.com/track/4MQPy613X9pvCAhdu7cFYc?si=cf88d2c480384101"
+              data-action="share/whatsapp/share">
+              <button class="button_to_listen">
+                <img src="./share.svg" alt="share"> </button>
+            </a>
+          </td>
+          <td class="table_item_margin_two">
+            <h2 class="text_to_konow_the_song_name">
+              Hyms of Reflection</h2>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </div>
+
+  <h3 class='font_align_to_right'>
+    *Only sharing with whatsapp is available for now
+  </h3>
+
+  <br />
+  <marquee class="algerian_font" behavior="slow" direction="left">
+    <h4>
+      This Website Is Hosted and Manged By AS_Developer. For Buissnes Quieres
+      Gmail Us At <a href="mailto:Aradhyamaria1@gmail.com"> Aradhyamaria1@gmail.com</a>
+    </h4>
+  </marquee>
+  <br />
+  <footer>
+    <div class="align_them_all_corectly">
+      <h3>
+        Special Thanks To Spotify App
+        <br />
+        <a
+          href="https://play.google.com/store/apps/details?id=com.spotify.music&hl=en_US&gl=US&label=sp_cid%3Ae3a538f42ade70a7990890e83d2e6912&_branch_match_id=1026810607963930140&utm_source=Web&utm_campaign=DEFAULT&utm_medium=%2Fdownload%20page&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy7IL8lMq9TLyczL1g8xLPP2MPMussxMss9JTErNsS0uiE%2FOTFE1dkw1TjQ1tkgzMUpMSTU3SDS3tDSwsDRItTBOMUo1szQ0AgCTsbyUUAAAAA%3D%3D">
+          Download the App Now
+        </a>
+      </h3>
+    </div>
+
+    <div class="align_them_all_corectly">
+      <h3>
+        Thanks for Reading this Blog
+        <br />
+        <a draggable="true" href="mailto:Aradhyamaria1@gmail.com"> Mail
+          Us</a>
+        <br />
+        <a href="tel:+919870822759">Call Us</a>
+
+      </h3>
+    </div>
+    <div class="align_them_all_corectly">
+      <h3 class="red_color_size_auto">
+        Follow Kshmr on
+        <br />
+        <a href="https://www.youtube.com/channel/UCFMjkrMT7Gvg84v0av-DIwA/videos">
+          Youtube
+        </a>
+        <br />
+
+        <a href="https://www.facebook.com/KSHMRmusic">
+          Facebook
+        </a>
+        <br />
+        <a href="https://www.dharmaworldwide.com/pro?gclid=EAIaIQobChMI-Lr6zMya9gIVljMrCh0sPQrIEAAYASAAEgJl9vD_BwE">
+          Dharma Studios
+        </a>
+        <br />
+        <a href="https://djmag.com/top-100-djs/poll-2020-kshmr">
+          DJ Mag
+        </a>
+      </h3>
+</body>
+
+</html>
+<!--🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥Done -->
